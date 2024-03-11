@@ -1,0 +1,21 @@
+// Variables
+// Fuentes
+
+@font-face {
+    font-family: 'Monomaniac One';
+    src: url('../../fonts/MonomaniacOne-Regular.ttf');
+  }
+  
+  body {
+    font-family: "Monomaniac one", sans-serif;
+  }
+
+$main_font: 'Monomaniac One', sans-serif;
+
+// Separación
+$separation: 5rem;
+
+// Tamaño media-queries
+$small: 480px;
+$medium: 768px;
+$big: 992px;
