@@ -1,0 +1,67 @@
+@use 'variables' as var;
+@use 'sass:color';
+
+// Mixins
+
+//Box-sizing
+@mixin box-sizing($box-model) {
+    box-sizing: $box-model;
+}
+
+//Botón
+@mixin btn($bgcolor, $fgcolor) {
+    background-color: $bgcolor;
+    border: none;
+    border-radius: 1rem;
+    color: $fgcolor;
+    display: block;
+    width: 100%;
+    padding: 1.2rem 3rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.4s ease;
+
+    &:hover {
+        background-color: color.scale($bgcolor, $lightness: -20%);
+    }
+
+    @include tablet {
+        width: auto;
+    }
+
+}
+
+//Grid
+@mixin grid($columns, $gap){
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
+}
+
+@mixin bg-image($image) {
+    background-image: url('../../build/img/'+#{$image});
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+// Media queries
+@mixin mobile {
+    @media screen and (min-width: #{var.$small}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: #{var.$medium}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: #{var.$big}) {
+        @content;
+    }
+}
+
+
